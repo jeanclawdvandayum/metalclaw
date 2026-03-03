@@ -9,6 +9,7 @@
 | `skills/` | 24 skills — UI frameworks, design tools, visual explainers, document generators, workflow utilities |
 | `system/` | Memory system upgrade — knowledge graph, meta-learning files, vault commands |
 | `reference/` | Alchemix V3 mechanics reference (for accurate content) |
+| `tools/` | Tool guides + install scripts (scrapling web scraper) |
 | `scripts/` | One-shot install script |
 
 ## Install
@@ -26,6 +27,12 @@ The installer:
 - Copies 24 skills to `~/.openclaw/skills/` and `~/.claude/skills/`
 - Drops memory system files into your workspace (won't overwrite existing files)
 - Creates `memory/topics/` directory structure
+
+### Optional: Scrapling (stealth web scraper)
+```bash
+bash /tmp/metalclaw/scripts/install-scrapling.sh
+```
+Three-tier fetcher: fast HTTP → Playwright (JS rendering) → Camoufox (Cloudflare bypass). See `tools/scrapling.md` for usage.
 
 ## Memory System
 
