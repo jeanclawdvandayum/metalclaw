@@ -42,7 +42,7 @@ echo ""
 echo "Installing memory system..."
 
 # Only copy system files that DON'T already exist (don't overwrite user's work)
-for f in AGENTS.md COMMANDS.md LESSONS.md HOLDS.md FRICTION.md PREDICTIONS.md; do
+for f in AGENTS.md COMMANDS.md LESSONS.md HOLDS.md FRICTION.md PREDICTIONS.md HEARTBEAT.md CONFIG-GUIDE.md; do
   src="$SYSTEM_DIR/$f"
   dst="$WORKSPACE/$f"
   if [ -f "$src" ]; then

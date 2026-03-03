@@ -120,7 +120,7 @@ memory/YYYY-MM-DD.md (daily notes, raw logs)
 
 ## Token Efficiency
 
-Skills load on-demand (matched by description). Memory system is lightweight — `_index.md` is ~30 lines, topic files load only when relevant. No cron jobs, no background processes.
+Skills load on-demand (matched by description). Memory system is lightweight — `_index.md` is ~30 lines, topic files load only when relevant. Heartbeat is set to every 60 minutes (adjustable in config).
 
 ## License
 

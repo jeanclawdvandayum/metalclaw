@@ -134,10 +134,11 @@ When you receive a heartbeat poll, don't just reply `HEARTBEAT_OK` every time. U
 - Task needs isolation from main session
 - One-shot reminders
 
-### What to Check (rotate, 2-4x per day)
+### What to Check (rotate through these each heartbeat)
 - **Emails** — urgent unread?
 - **Calendar** — upcoming events in 24-48h?
 - **Mentions** — social notifications?
+- **Projects** — git status, open PRs, anything stale?
 
 ### When to Reach Out vs Stay Quiet
 **Reach out:** Important email, event in <2h, something interesting found, >8h since last contact.
