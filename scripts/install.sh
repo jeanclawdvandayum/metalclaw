@@ -73,6 +73,15 @@ if [ -d "$REF_DIR" ] && [ "$(ls -A "$REF_DIR" 2>/dev/null)" ]; then
   echo "📚 Reference docs copied to $WORKSPACE/reference/"
 fi
 
+# ── Tools ──
+TOOLS_DIR="$REPO_DIR/tools"
+if [ -d "$TOOLS_DIR" ]; then
+  mkdir -p "$WORKSPACE/tools/security"
+  cp "$TOOLS_DIR"/*.md "$WORKSPACE/tools/" 2>/dev/null || true
+  cp -r "$TOOLS_DIR/security/" "$WORKSPACE/tools/security/" 2>/dev/null || true
+  echo "🔧 Tool guides + scripts copied to $WORKSPACE/tools/"
+fi
+
 echo ""
 echo "🤘 Done."
 echo ""
@@ -81,12 +90,22 @@ echo "  1. Create your SOUL.md (who is the agent?)"
 echo "  2. Create your USER.md (who are you?)"
 echo "  3. Restart gateway: openclaw gateway restart"
 echo ""
+echo "Optional tool installs:"
+echo "  bash scripts/install-scrapling.sh   # Stealth web scraper"
+echo "  brew install whisper-cpp            # Local speech-to-text"
+echo "  npm install beautiful-mermaid tsx   # ASCII/SVG diagrams"
+echo "  npm install @paper-design/shaders  # Canvas visual effects"
+echo ""
 echo "Memory system files installed:"
-echo "  AGENTS.md    — Session startup + conventions"
-echo "  COMMANDS.md  — /vault commands (/today, /map, /graduate, etc.)"
-echo "  LESSONS.md   — Mistake → guardrail pipeline"
-echo "  HOLDS.md     — Temporary context filters"
-echo "  FRICTION.md  — Contradiction log"
+echo "  AGENTS.md      — Session startup, group chat rules, heartbeats, sub-agent gates"
+echo "  COMMANDS.md    — 18 vault commands (/today, /map, /graduate, etc.)"
+echo "  LESSONS.md     — Mistake → guardrail pipeline"
+echo "  HOLDS.md       — Temporary context filters"
+echo "  FRICTION.md    — Contradiction log"
 echo "  PREDICTIONS.md — Decision calibration"
-echo "  memory/_index.md — Knowledge graph entry point"
-echo "  memory/topics/   — Atomic topic files (create as you go)"
+echo "  memory/_index.md  — Knowledge graph entry point"
+echo "  memory/topics/    — Atomic topic files (create as you go)"
+echo ""
+echo "Tools installed:"
+echo "  tools/security/scan-injection.py — Prompt injection scanner"
+echo "  tools/*.md — Usage guides for scrapling, mermaid, whisper, shaders, here.now"
